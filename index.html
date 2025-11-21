@@ -363,7 +363,10 @@
                   <span style="color:#FF3B3B; font-size:1.4rem; text-decoration: line-through; font-weight:600; display:block;">DE&nbsp;R$97,00</span>
                   <span style="color:#444; font-size:1rem; display:block;">POR APENAS</span>
                   <span style="color:#17b84c; font-size:4.4rem; font-weight:700; display:block; margin: 8px 0 4px 0;">R$10</span>
-                  <span style="background: #FFD700; color:#B22222; font-weight:700; padding:4px 14px; border-radius:14px; font-size:1rem;">ÚLTIMO DIA!</span>
+                  <span id="data-urgencia" style="background: #FFD700; color:#B22222; font-weight:700; padding:4px 14px; border-radius:14px; font-size:1rem;">
+          ATÉ DIA ...
+            </span>
+
                 </div>
             </div>
 
@@ -373,5 +376,17 @@
             </div>
         </div>
     </section>
+    <script>
+  // Captura a data atual do navegador do usuário
+  const hoje = new Date();
+  // Formata o dia e o mês (com 2 dígitos)
+  const dia = hoje.getDate().toString().padStart(2, '0');
+  const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
+  // Monta o texto final
+  const mensagem = `ATÉ DIA ${dia}/${mes}`;
+  // Insere a mensagem no span
+  document.getElementById('data-urgencia').innerText = mensagem;
+</script>
+
 </body>
 </html>
