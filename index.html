@@ -989,50 +989,50 @@
   </div>
 </section>
 <!-- Popup Modal de Downsell -->
-<div id="popupDownsell" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 9999; justify-content: center; align-items: center;">
-  <div style="background: white; border-radius: 20px; padding: 50px 40px; max-width: 600px; width: 90%; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); text-align: center; position: relative;">
+<div id="popupDownsell" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 9999; justify-content: center; align-items: center; overflow-y: auto; padding: 20px;">
+  <div style="background: white; border-radius: 20px; padding: 40px 30px; max-width: 600px; width: 100%; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); text-align: center; position: relative; margin: auto;">
     
     <!-- Botão Fechar -->
-    <button onclick="document.getElementById('popupDownsell').style.display='none';" style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; color: #999; cursor: pointer; font-weight: bold;">×</button>
+    <button onclick="document.getElementById('popupDownsell').style.display='none';" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; color: #999; cursor: pointer; font-weight: bold;">×</button>
 
     <!-- Imagem do Mockup -->
-    <div style="margin-bottom: 30px;">
-      <img src="Images/MockupCompleto.webp" alt="Plano Completo - Mockup" style="width: 100%; height: auto; max-width: 300px; border-radius: 12px;">
+    <div style="margin-bottom: 25px; margin-top: 20px;">
+      <img src="Images/MockupCompleto.webp" alt="Plano Completo - Mockup" style="width: 100%; height: auto; max-width: 250px; border-radius: 12px;">
     </div>
 
     <!-- Texto Principal -->
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: #2c2c2c; margin: 0 0 15px 0; font-weight: 700; line-height: 1.4;">
-      Última chance! Vamos dar um desconto de <span style="color: #d4a574;">30%</span> Para Levar o Plano Completo!
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.2rem, 5vw, 1.4rem); color: #2c2c2c; margin: 0 0 12px 0; font-weight: 700; line-height: 1.3;">
+      Última chance! Desconto de <span style="color: #d4a574;">30%</span>
     </h2>
 
-    <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: #666; margin-bottom: 25px; line-height: 1.6;">
+    <p style="font-family: 'Montserrat', sans-serif; font-size: clamp(0.9rem, 4vw, 1.05rem); color: #666; margin-bottom: 20px; line-height: 1.5;">
       De R$ 37,00 por apenas:
     </p>
 
     <!-- Preço em Destaque -->
-    <div style="background: linear-gradient(135deg, rgba(23, 184, 76, 0.1) 0%, rgba(23, 184, 76, 0.05) 100%); padding: 30px; border-radius: 16px; border: 2px solid #17b84c; margin-bottom: 25px;">
-      <p style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: #17b84c; margin: 0; font-weight: 700;">
+    <div style="background: linear-gradient(135deg, rgba(23, 184, 76, 0.1) 0%, rgba(23, 184, 76, 0.05) 100%); padding: 20px; border-radius: 16px; border: 2px solid #17b84c; margin-bottom: 20px;">
+      <p style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 8vw, 3rem); color: #17b84c; margin: 0; font-weight: 700;">
         R$ 25
       </p>
-      <p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #17b84c; margin: 8px 0 0 0; font-weight: 600;">
+      <p style="font-family: 'Montserrat', sans-serif; font-size: clamp(0.85rem, 3.5vw, 0.95rem); color: #17b84c; margin: 8px 0 0 0; font-weight: 600;">
         ou 3 x de R$ 8,92
       </p>
     </div>
 
     <!-- Texto de Benefícios -->
-    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #d4a574; margin-bottom: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-      ✅ Você vai receber todos os bônus da noiva, atualizações e acesso vitalício. Aproveite! 🎉
+    <p style="font-family: 'Montserrat', sans-serif; font-size: clamp(0.85rem, 3vw, 0.95rem); color: #d4a574; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+      ✅ Todos os bônus, atualizações e acesso vitalício! 🎉
     </p>
 
     <!-- Botões -->
-    <div style="display: flex; flex-direction: column; gap: 15px;">
-      <a href="https://payt.site/lwCe2ov" style="display: block; background: linear-gradient(135deg, #17b84c 0%, #0d9a38 100%); color: white; padding: 18px 40px; font-size: 1.05rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(23, 184, 76, 0.3); font-family: 'Montserrat', sans-serif;"
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://payt.site/lwCe2ov" style="display: block; background: linear-gradient(135deg, #17b84c 0%, #0d9a38 100%); color: white; padding: clamp(14px, 4vw, 18px) 30px; font-size: clamp(0.95rem, 3.5vw, 1.05rem); font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(23, 184, 76, 0.3); font-family: 'Montserrat', sans-serif;"
          onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(23, 184, 76, 0.4)';"
          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(23, 184, 76, 0.3)';">
         Vou Aproveitar o Desconto!
       </a>
       
-      <a href="https://payt.site/MaCOoAR" style="display: block; background: #ccc; color: #666; padding: 16px 40px; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif;"
+      <a href="https://payt.site/MaCOoAR" style="display: block; background: #ccc; color: #666; padding: clamp(12px, 3.5vw, 16px) 30px; font-size: clamp(0.9rem, 3vw, 1rem); font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif;"
               onmouseover="this.style.background='#999'; this.style.color='white';"
               onmouseout="this.style.background='#ccc'; this.style.color='#666';">
         Não, quero o básico de R$ 10
@@ -1041,7 +1041,7 @@
 
   </div>
 </div>
-</script>
+
 
 
 </body>
