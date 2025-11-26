@@ -386,32 +386,47 @@
     </p>
     <img src="Images/Mecanismo.webp" alt="Mecanismo do Método" style="width: 85%; max-width: 440px; height: auto; border-radius: 12px;">
   </div>
-</section>
-
+        <div style="max-width:400px;margin:40px auto;font-family:'Segoe UI',sans-serif">
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:2.5rem;color:#2c2c2c;margin-bottom:15px;font-weight:700;text-align:center">
+        Como Você Quer Estar?
+    </h2>
     
-    <section style="background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%); padding: 80px 20px;">
-      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #2c2c2c; margin-bottom: 15px; font-weight: 700;">
-          Nossas <span style="color: #d4a574;">Noivinhas</span>
-        </h2>
-        <p style="font-size: 1.05rem; color: #666; margin-bottom: 50px;">Veja os resultados de quem já realizou o sonho do casamento economizando com nosso método</p>
+    <div id="compareContainer" style="position:relative;width:100%;max-width:400px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.2)">
         
-        <!-- Depoimentos (Assumindo que são imagens ou embeds que não precisam de lazy loading se forem pequenos) -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-          <img src="Images/prova1.webp" alt="Depoimento de Noiva 1" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
-          <img src="Images/prova2.webp" alt="Depoimento de Noiva 2" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
-          <img src="Images/prova3.webp" alt="Depoimento de Noiva 3" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
-          <img src="Images/prova4.webp" alt="Depoimento de Noiva 4" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
+        <!-- Imagem DEPOIS -->
+        <img src="Images/depois.webp" alt="Com o Método" loading="lazy" decoding="async" width="400" height="auto" style="width:100%;height:auto;display:block">
+        
+        <!-- Imagem ANTES -->
+        <div id="imageAntes" style="position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden;z-index:2">
+            <img id="imgAntes" src="Images/antes.webp" alt="Sem o Método" loading="lazy" decoding="async" width="400" height="auto" style="position:absolute;top:0;left:0;width:400px;height:100%;object-fit:cover;display:block">
         </div>
         
-        <a href="#planos" style="display: inline-block; background: linear-gradient(135deg, #d4a574 0%, #c89660 100%); color: white; padding: 18px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3); margin-top: 50px;"
-           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(212, 165, 116, 0.4)';"
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(212, 165, 116, 0.3)';">
-          QUERO ECONOMIZAR TAMBÉM!
-        </a>
-      </div>
-    </section>
+        <!-- Slider -->
+        <div id="slider" style="position:absolute;top:0;left:50%;width:4px;height:100%;background:#fff;cursor:ew-resize;z-index:3;transform:translateX(-2px);box-shadow:0 0 10px rgba(0,0,0,0.5)">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:#fff;border-radius:50%;box-shadow:0 0 15px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;color:#667eea">
+                ⟷
+            </div>
+        </div>
+        
+        <!-- Labels -->
+        <div id="labelAntes" style="position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(40,167,69,0.95);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700;z-index:4;font-size:0.85rem;transition:opacity 0.3s;opacity:0;pointer-events:none;white-space:nowrap">
+            ✅ COM O MÉTODO CASAMENTO ECONÔMICO
+        </div>
+        
+        <div id="labelDepois" style="position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(220,53,69,0.95);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700;z-index:4;font-size:0.85rem;transition:opacity 0.3s;opacity:0;pointer-events:none;white-space:nowrap">
+            ❌ JEITO TRADICIONAL
+        </div>
+        
+    </div>
     
+</div>
+
+<script>
+!function(){function e(){i.style.width=c.offsetWidth+"px"}function t(e){const t=c.getBoundingClientRect();let n=e-t.left;n=Math.max(0,Math.min(n,t.width));const i=(n/t.width)*100;s.style.left=i+"%",o.style.width=i+"%",d||(d=!0),d&&(i<50?(a.style.opacity="1",l.style.opacity="0"):(a.style.opacity="0",l.style.opacity="1"))}const c=document.getElementById("compareContainer"),s=document.getElementById("slider"),o=document.getElementById("imageAntes"),i=document.getElementById("imgAntes"),a=document.getElementById("labelAntes"),l=document.getElementById("labelDepois");let d=!1,n=!1;e(),window.addEventListener("resize",e),s.addEventListener("mousedown",()=>n=!0),document.addEventListener("mousemove",e=>{n&&t(e.clientX)}),document.addEventListener("mouseup",()=>n=!1),s.addEventListener("touchstart",e=>{n=!0,e.preventDefault()}),document.addEventListener("touchmove",e=>{n&&t(e.touches[0].clientX)}),document.addEventListener("touchend",()=>n=!1)}();
+</script>
+        
+</section>  
+        
     <section style="background: #fff; padding: 80px 20px;">
       <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #2c2c2c; margin-bottom: 15px; font-weight: 700;">
@@ -536,45 +551,31 @@
             </div>
           </div>
         </div>
-          <div style="max-width:400px;margin:40px auto;font-family:'Segoe UI',sans-serif">
-    <h2 style="font-family:'Montserrat',sans-serif;font-size:2.5rem;color:#2c2c2c;margin-bottom:15px;font-weight:700;text-align:center">
-        Como Você Quer Estar?
-    </h2>
-    
-    <div id="compareContainer" style="position:relative;width:100%;max-width:400px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.2)">
-        
-        <!-- Imagem DEPOIS -->
-        <img src="Images/depois.webp" alt="Com o Método" loading="lazy" decoding="async" width="400" height="auto" style="width:100%;height:auto;display:block">
-        
-        <!-- Imagem ANTES -->
-        <div id="imageAntes" style="position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden;z-index:2">
-            <img id="imgAntes" src="Images/antes.webp" alt="Sem o Método" loading="lazy" decoding="async" width="400" height="auto" style="position:absolute;top:0;left:0;width:400px;height:100%;object-fit:cover;display:block">
-        </div>
-        
-        <!-- Slider -->
-        <div id="slider" style="position:absolute;top:0;left:50%;width:4px;height:100%;background:#fff;cursor:ew-resize;z-index:3;transform:translateX(-2px);box-shadow:0 0 10px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:#fff;border-radius:50%;box-shadow:0 0 15px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;color:#667eea">
-                ⟷
-            </div>
-        </div>
-        
-        <!-- Labels -->
-        <div id="labelAntes" style="position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(40,167,69,0.95);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700;z-index:4;font-size:0.85rem;transition:opacity 0.3s;opacity:0;pointer-events:none;white-space:nowrap">
-            ✅ COM O MÉTODO CASAMENTO ECONÔMICO
-        </div>
-        
-        <div id="labelDepois" style="position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(220,53,69,0.95);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700;z-index:4;font-size:0.85rem;transition:opacity 0.3s;opacity:0;pointer-events:none;white-space:nowrap">
-            ❌ JEITO TRADICIONAL
-        </div>
-        
-    </div>
-    
-</div>
-
-<script>
-!function(){function e(){i.style.width=c.offsetWidth+"px"}function t(e){const t=c.getBoundingClientRect();let n=e-t.left;n=Math.max(0,Math.min(n,t.width));const i=(n/t.width)*100;s.style.left=i+"%",o.style.width=i+"%",d||(d=!0),d&&(i<50?(a.style.opacity="1",l.style.opacity="0"):(a.style.opacity="0",l.style.opacity="1"))}const c=document.getElementById("compareContainer"),s=document.getElementById("slider"),o=document.getElementById("imageAntes"),i=document.getElementById("imgAntes"),a=document.getElementById("labelAntes"),l=document.getElementById("labelDepois");let d=!1,n=!1;e(),window.addEventListener("resize",e),s.addEventListener("mousedown",()=>n=!0),document.addEventListener("mousemove",e=>{n&&t(e.clientX)}),document.addEventListener("mouseup",()=>n=!1),s.addEventListener("touchstart",e=>{n=!0,e.preventDefault()}),document.addEventListener("touchmove",e=>{n&&t(e.touches[0].clientX)}),document.addEventListener("touchend",()=>n=!1)}();
-</script>
           </section>
+    
+    <section style="background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%); padding: 80px 20px;">
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #2c2c2c; margin-bottom: 15px; font-weight: 700;">
+          Nossas <span style="color: #d4a574;">Noivinhas</span>
+        </h2>
+        <p style="font-size: 1.05rem; color: #666; margin-bottom: 50px;">Veja os resultados de quem já realizou o sonho do casamento economizando com nosso método</p>
+        
+        <!-- Depoimentos (Assumindo que são imagens ou embeds que não precisam de lazy loading se forem pequenos) -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
+          <img src="Images/prova1.webp" alt="Depoimento de Noiva 1" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
+          <img src="Images/prova2.webp" alt="Depoimento de Noiva 2" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
+          <img src="Images/prova3.webp" alt="Depoimento de Noiva 3" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
+          <img src="Images/prova4.webp" alt="Depoimento de Noiva 4" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" loading="lazy">
+        </div>
+        
+        <a href="#planos" style="display: inline-block; background: linear-gradient(135deg, #d4a574 0%, #c89660 100%); color: white; padding: 18px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3); margin-top: 50px;"
+           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(212, 165, 116, 0.4)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(212, 165, 116, 0.3)';">
+          QUERO ECONOMIZAR TAMBÉM!
+        </a>
+      </div>
+    </section>
+    
     <section 
       id="planos" 
       style="background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%); padding: 80px 20px;">
