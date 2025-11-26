@@ -535,18 +535,19 @@
               </p>
             </div>
           </div>
-            <div style="max-width: 687px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: #2c2c2c; margin-bottom: 15px; font-weight: 700;">
-            Como Você Quer Estar?
-          </h2>
+          <div style="max-width: 687px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; color: #2c2c2c; margin-bottom: 15px; font-weight: 700; text-align: center;">
+        Como Você Quer Estar?
+    </h2>
+    
     <div id="compareContainer" style="position: relative; width: 100%; max-width: 687px; margin: 0 auto; overflow: hidden; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
         
         <!-- Imagem DEPOIS (fica por baixo) -->
-        <img src="Images/depois.webp" alt="Com o Método" style="width: 100%; height: auto; display: block;">
+        <img src="Images/depois.webp" alt="Com o Método" loading="lazy" style="width: 100%; height: auto; display: block;">
         
         <!-- Imagem ANTES (fica por cima) -->
         <div id="imageAntes" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; z-index: 2;">
-            <img id="imgAntes" src="Images/antes.webp" alt="Sem o Método" style="position: absolute; top: 0; left: 0; width: 687px; height: 100%; object-fit: cover; display: block;">
+            <img id="imgAntes" src="Images/antes.webp" alt="Sem o Método" loading="lazy" style="position: absolute; top: 0; left: 0; width: 687px; height: 100%; object-fit: cover; display: block;">
         </div>
         
         <!-- Controle deslizante -->
@@ -556,13 +557,13 @@
             </div>
         </div>
         
-        <!-- Label ANTES (Jeito Tradicional) - aparece à esquerda -->
-        <div id="labelAntes" style="position: absolute; top: 20px; left: 20px; background: rgba(40, 167, 69, 0.9); color: white; padding: 8px 16px; border-radius: 25px; font-weight: bold; z-index: 4; font-size: 0.75rem; transition: opacity 0.3s ease;">
+        <!-- Label ANTES (Método Econômico) - aparece centralizado -->
+        <div id="labelAntes" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(40, 167, 69, 0.95); color: white; padding: 12px 24px; border-radius: 25px; font-weight: bold; z-index: 4; font-size: 0.85rem; transition: opacity 0.3s ease; opacity: 0; pointer-events: none; white-space: nowrap;">
             ✅ COM O MÉTODO CASAMENTO ECONÔMICO
         </div>
         
-        <!-- Label DEPOIS (Com o Método) - aparece à direita -->
-        <div id="labelDepois" style="position: absolute; top: 20px; right: 20px; background: rgba(220, 53, 69, 0.9); color: white; padding: 8px 16px; border-radius: 25px; font-weight: bold; z-index: 4; font-size: 0.75rem; transition: opacity 0.3s ease;">
+        <!-- Label DEPOIS (Jeito Tradicional) - aparece centralizado -->
+        <div id="labelDepois" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(220, 53, 69, 0.95); color: white; padding: 12px 24px; border-radius: 25px; font-weight: bold; z-index: 4; font-size: 0.85rem; transition: opacity 0.3s ease; opacity: 0; pointer-events: none; white-space: nowrap;">
             ❌ JEITO TRADICIONAL
         </div>
         
@@ -571,7 +572,7 @@
 </div>
 
 <script>
-(function() {
+window.addEventListener('load', function() {
     const container = document.getElementById('compareContainer');
     const slider = document.getElementById('slider');
     const imageAntes = document.getElementById('imageAntes');
@@ -579,6 +580,7 @@
     const labelAntes = document.getElementById('labelAntes');
     const labelDepois = document.getElementById('labelDepois');
     let isDragging = false;
+    let hasInteracted = false;
     
     // Ajustar largura fixa da imagem ao carregar
     function setImageWidth() {
@@ -599,13 +601,20 @@
         slider.style.left = percentage + '%';
         imageAntes.style.width = percentage + '%';
         
-        // Atualizar visibilidade dos labels
-        if (percentage < 50) {
-            labelAntes.style.opacity = '1';
-            labelDepois.style.opacity = '0';
-        } else {
-            labelAntes.style.opacity = '0';
-            labelDepois.style.opacity = '1';
+        // Mostrar labels apenas após primeira interação
+        if (!hasInteracted) {
+            hasInteracted = true;
+        }
+        
+        // Atualizar visibilidade dos labels (só mostra se já interagiu)
+        if (hasInteracted) {
+            if (percentage < 50) {
+                labelAntes.style.opacity = '1';
+                labelDepois.style.opacity = '0';
+            } else {
+                labelAntes.style.opacity = '0';
+                labelDepois.style.opacity = '1';
+            }
         }
     }
     
@@ -631,7 +640,7 @@
     });
     
     document.addEventListener('touchend', () => isDragging = false);
-})();
+});
 </script>
         </div>
           </section>
