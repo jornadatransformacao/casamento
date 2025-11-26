@@ -425,6 +425,12 @@
 !function(){function e(){i.style.width=c.offsetWidth+"px"}function t(e){const t=c.getBoundingClientRect();let n=e-t.left;n=Math.max(0,Math.min(n,t.width));const i=(n/t.width)*100;s.style.left=i+"%",o.style.width=i+"%",d||(d=!0),d&&(i<50?(a.style.opacity="1",l.style.opacity="0"):(a.style.opacity="0",l.style.opacity="1"))}const c=document.getElementById("compareContainer"),s=document.getElementById("slider"),o=document.getElementById("imageAntes"),i=document.getElementById("imgAntes"),a=document.getElementById("labelAntes"),l=document.getElementById("labelDepois");let d=!1,n=!1;e(),window.addEventListener("resize",e),s.addEventListener("mousedown",()=>n=!0),document.addEventListener("mousemove",e=>{n&&t(e.clientX)}),document.addEventListener("mouseup",()=>n=!1),s.addEventListener("touchstart",e=>{n=!0,e.preventDefault()}),document.addEventListener("touchmove",e=>{n&&t(e.touches[0].clientX)}),document.addEventListener("touchend",()=>n=!1)}();
 </script>
         
+        <a href="#planos" style="display: inline-block; background: linear-gradient(135deg, #d4a574 0%, #c89660 100%); color: white; padding: 18px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3); margin-top: 50px;"
+           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(212, 165, 116, 0.4)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(212, 165, 116, 0.3)';">
+          QUERO CASAR BARATO!
+        </a>
+        
 </section>  
         
     <section style="background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%); padding: 80px 20px;">
