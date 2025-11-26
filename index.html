@@ -542,7 +542,7 @@
         
         <!-- Imagem ANTES (fica por cima) -->
         <div id="imageAntes" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; z-index: 2;">
-            <img src="Images/antes.webp" alt="Sem o Método" style="width: 687px; max-width: none; height: auto; object-fit: cover; display: block;">
+            <img src="Images/antes.webp" alt="Sem o Método" style="width: 200%; height: 100%; object-fit: cover; display: block; object-position: left;">
         </div>
         
         <!-- Imagem DEPOIS (fica por baixo) -->
@@ -588,8 +588,6 @@
         imageAntes.style.width = percentage + '%';
         
         // Atualizar visibilidade dos labels
-        // Se slider está mais à esquerda (< 50%), mostrar label ANTES
-        // Se slider está mais à direita (> 50%), mostrar label DEPOIS
         if (percentage < 50) {
             labelAntes.style.opacity = '1';
             labelDepois.style.opacity = '0';
