@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-</noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casamento Econômico - Realize Seu Sonho</title>
-    <!-- Otimização de Fontes: Adicionando 'media="print"' e 'onload' para carregamento assíncrono -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonte Montserrat com carregamento assíncrono -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Fallback para navegadores sem JavaScript -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
     <style>
         * {
             margin: 0;
@@ -136,7 +139,7 @@
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', serif;
             font-size: 3.2rem;
             font-weight: 700;
             line-height: 1.2;
@@ -151,16 +154,6 @@
             display: inline-block;
         }
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            font-weight: 400;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
         .cta-container {
             margin-top: 50px;
@@ -297,6 +290,10 @@
                 line-height: 1.25;
             }
 
+            .subtitle {
+                font-size: 1rem;
+            }
+
             .badge {
                 font-size: 11px;
                 padding: 8px 20px;
@@ -335,13 +332,14 @@
         <div class="hero-container">
             <div class="hero-content">                
                 <h1>
-                    <span class="highlight">Casamento dos Seus Sonhos</span> Por R$7.000
+                    <span class="highlight">Casamento dos Seus Sonhos</span> por R$7.000
                 </h1>
 
                 <div class="hero-image-wrapper hero-image-mobile">
                     <div class="hero-image-decoration"></div>
                     <img src="Images/Hero.webp" alt="Casamento Econômico - Depoimento" class="hero-image">
-                </div>                
+                </div>
+                
                 <div class="cta-container" style="text-align:center;">
                   <span style="color:#FF3B3B; font-size:1.4rem; text-decoration: line-through; font-weight:600; display:block;">DE&nbsp;R$97,00</span>
                   <span style="color:#444; font-size:1rem; display:block;">POR APENAS</span>
@@ -359,6 +357,7 @@
             </div>
         </div>
     </section>
+    
    <section style="background: #fff; padding: 64px 20px 48px 20px; text-align: center;">
   <img src="Images/Dor.webp" alt="Dores e dúvidas sobre casamento" style="max-width: 540px; width: 100%; margin-bottom: 28px;" />
   <div style="max-width: 840px; margin: 0 auto;">
