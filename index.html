@@ -30,12 +30,10 @@
 
         /* NOVA SEÇÃO COM FUNDO CORAL/VERMELHO */
         .top-banner {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8787 100%);
-    padding: 60px 20px 50px 20px; /* Era 80px, mudei para 50px */
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8787 100%);
+            padding: 60px 20px 40px 20px; /* MUDOU: de 80px para 40px */
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         .top-banner h1 {
@@ -54,16 +52,16 @@
         }
 
         .hero-section {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    overflow: hidden;
-    margin-top: -100px; /* Era -60px, mudei para -100px */
-}
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8e8e8 0%, #fdf5f5 50%, #fff9f9 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow: hidden;
+            margin-top: -120px; /* MUDOU: de -60px para -120px */
+        }
 
         .hero-container {
             max-width: 1400px;
@@ -197,11 +195,15 @@
 
         @media (max-width: 768px) {
             .top-banner {
-                padding: 40px 20px 60px 5px;
+                padding: 40px 20px 30px 20px; /* MUDOU: de 60px para 30px */
             }
 
             .top-banner h1 {
                 font-size: 1.8rem;
+            }
+
+            .hero-section {
+                margin-top: -80px; /* ADICIONADO: ajuste para mobile */
             }
 
             .hero-container {
