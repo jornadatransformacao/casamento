@@ -103,6 +103,19 @@
             animation: float 8s ease-in-out infinite;
         }
 
+        .subheadline p {
+            font-size: 1.35rem;
+            color: #2c2c2c;
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .subheadline .highlight {
+            color: #d4a574;
+            font-weight: 700;
+        }
+    
         .hero-section::after {
             content: '';
             position: absolute;
@@ -239,6 +252,9 @@
                 display: none;
             }
 
+            .subheadline p {
+                font-size: 1.15rem;
+            }
 
             h1 {
                 font-size: 2rem;
@@ -264,6 +280,9 @@
                 line-height: 1.25;
             }
 
+            .subheadline p {
+                font-size: 1.05rem;
+            }
         }
     </style>
     <script>
@@ -306,16 +325,14 @@
                     <img src="Images/Hero.webp" alt="Casamento Econômico - Depoimento" class="hero-image">
                 </div>
                 
-                <div class="cta-container" style="text-align:center;">
-                  <span style="color:#FF3B3B; font-size:1.4rem; text-decoration: line-through; font-weight:600; display:block;">DE&nbsp;R$97,00</span>
-                  <span style="color:#444; font-size:1rem; display:block;">POR APENAS</span>
-                  <span style="color:#17b84c; font-size:4.4rem; font-weight:900; display:block; margin: 8px 0 4px 0;">R$10</span>
-                  <span id="data-urgencia" style="background: #FFD700; color:#B22222; font-weight:700; padding:4px 14px; border-radius:14px; font-size:1rem;">
-          ATÉ DIA 27/11
-            </span>
-
+                 <!-- Subheadline -->
+                    <div class="subheadline">
+                    <p>
+                        Economize sem abrir mão do seu sonho. <span class="highlight">Método validado por +500 noivas</span> que economizaram em média <strong>R$ 15.000</strong>
+                    </p>
                 </div>
             </div>
+        </div>
 
             <div class="hero-image-wrapper hero-image-desktop">
                 <div class="hero-image-decoration"></div>
