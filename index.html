@@ -40,37 +40,31 @@
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 900px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-image-mobile {
-            display: none;
-        }
-
-        .hero-image-desktop {
-            display: block;
-        }
-
         .hero-image-wrapper {
             position: relative;
-            animation: fadeInRight 1s ease-out;
+            animation: fadeInUp 1s ease-out;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 40px;
         }
 
-        @keyframes fadeInRight {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
 
@@ -80,17 +74,6 @@
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             display: block;
-        }
-
-        .hero-image-decoration {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(200, 150, 96, 0.1) 100%);
-            border-radius: 50%;
-            z-index: -1;
         }
 
         .hero-section::before {
@@ -103,6 +86,11 @@
             background: radial-gradient(circle, rgba(255, 192, 203, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
+        }
+
+        .subheadline {
+            text-align: center;
+            max-width: 800px;
         }
 
         .subheadline p {
@@ -136,21 +124,11 @@
         }
 
         .hero-content {
-            text-align: left;
+            text-align: center;
             position: relative;
             z-index: 1;
             animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            width: 100%;
         }
 
         h1 {
@@ -159,7 +137,7 @@
             font-weight: 700;
             line-height: 1.2;
             color: #2c2c2c;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
@@ -167,55 +145,6 @@
             color: #000000;
             position: relative;
             display: inline-block;
-        }
-
-        .cta-container {
-            margin-top: 50px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4a574 0%, #c89660 100%);
-            color: white;
-            padding: 22px 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.5);
-        }
-
-        .price-tag {
-            display: block;
-            font-size: 0.95rem;
-            margin-top: 8px;
-            font-weight: 500;
-            color: white;
         }
 
         .decorative-hearts {
@@ -241,21 +170,11 @@
             }
 
             .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
+                max-width: 100%;
             }
 
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero-image-mobile {
-                display: block;
-                margin: 30px 0;
-            }
-
-            .hero-image-desktop {
-                display: none;
+            .hero-image-wrapper {
+                max-width: 100%;
             }
 
             .subheadline p {
@@ -265,11 +184,6 @@
             h1 {
                 font-size: 2rem;
                 line-height: 1.3;
-            }
-
-            .cta-button {
-                padding: 18px 35px;
-                font-size: 1.1rem;
             }
 
             .hero-section::before,
@@ -322,20 +236,22 @@
         <div class="hero-container">
             <div class="hero-content">                
                 <h1>
-                    <span class="highlight">Seu Casamento Não Precisa <span style="color:#17b84c;">Custar uma Fortuna</span>
+                    <span class="highlight">Seu Casamento Não Precisa</span> <span style="color:#17b84c;">Custar uma Fortuna</span>
                 </h1>
 
-                <div>
-                    <vturb-smartplayer id="vid-692ccbe541399c0116179a44" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/a7763273-8f94-48eb-90f8-84f433eb1083/players/692ccbe541399c0116179a44/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+                <!-- Vídeo -->
+                <div class="hero-image-wrapper">
+                    <vturb-smartplayer id="vid-692ccbe541399c0116179a44" style="display: block; margin: 0 auto; width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);"></vturb-smartplayer>
                 </div>
                 
                 <!-- Subheadline -->
                 <div class="subheadline">
                     <p>
-        Enquanto você se desespera achando que <strong>precisa escolher</strong> entre casar do seu jeito ou guardar dinheiro, <strong>existe quem casou com tudo</strong> que você sonha por <span style="color:#17b84c;"><strong>menos de R$ 7.000</strong></span>
+                        Enquanto você se desespera achando que <strong>precisa escolher</strong> entre casar do seu jeito ou guardar dinheiro, <strong>existe quem casou com tudo</strong> que você sonha por <span style="color:#17b84c;"><strong>menos de R$ 7.000</strong></span>
                     </p>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Script do player Vturb (apenas UMA vez) -->
@@ -344,7 +260,7 @@
         s.src = "https://scripts.converteai.net/a7763273-8f94-48eb-90f8-84f433eb1083/players/692ccbe541399c0116179a44/v4/player.js";
         s.async = true;
         document.head.appendChild(s);
-    </script>   
+    </script>
    <section style="background: #fff; padding: 64px 20px 48px 20px; text-align: center;">
   <img src="Images/Dor.webp" alt="Dores e dúvidas sobre casamento" style="max-width: 540px; width: 100%; margin-bottom: 28px;" />
   <div style="max-width: 840px; margin: 0 auto;">
